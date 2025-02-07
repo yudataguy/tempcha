@@ -277,9 +277,12 @@
         <a href="privacy.html">Privacy Policy</a>
         <a href="mailto:contact@kaocha.app">Contact Us</a>
       </div>
-      <p>© 2024 KaoCha. All rights reserved.</p>
+      <p>© <span id="current-year"></span> KaoCha. All rights reserved.</p>
     </footer>
   </div>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
