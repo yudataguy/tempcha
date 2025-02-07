@@ -4,16 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KaoCha - Educational Communication App</title>
+  <title>KaoCha - Language Learning Made Personal</title>
   <style>
-    body,
-    html {
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333333;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     .sky-bg {
@@ -32,14 +33,13 @@
     }
 
     .container {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: 100%;
-      text-align: center;
       padding: 2rem;
       box-sizing: border-box;
+      width: 100%;
     }
 
     h1 {
@@ -96,18 +96,189 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1rem;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .feature-card p {
+      font-size: 1rem;
+      margin-bottom: 0;
+      color: #34495e;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #3498db;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero p {
+      font-size: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .app-store-badge {
+      width: 160px;
+      height: 47px;
+      transition: opacity 0.3s ease;
+    }
+
+    .app-store-badge:hover {
+      opacity: 0.8;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+      }
+
+      .feature-card {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    .footer {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 0.8rem 2rem;
+      width: 100%;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .footer-links {
+      margin: 0;
+    }
+
+    .footer-links a {
+      color: #3498db;
+      text-decoration: none;
+      margin-right: 1.5rem;
+      font-size: 0.85rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .footer-links {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links a {
+        margin: 0 0.75rem;
+      }
+    }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
   <div class="sky-bg"></div>
   <div class="container">
-    <h1>KaoCha</h1>
-    <p>Connecting teachers and students, simply.</p>
-    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-      <input type="email" name="email" placeholder="Enter your email for the waitlist" required>
-      <button type="submit">Join Waitlist</button>
-    </form>
+    <div class="hero">
+      <h1>KaoCha</h1>
+      <p>Your personal language learning companion</p>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>Text Correction</h3>
+        <p>Get personalized feedback from experienced teachers who understand your learning style and help you improve
+          your language
+          skills.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-video"></i>
+        </div>
+        <h3>Audio & Video Messages</h3>
+        <p>Practice pronunciation and speaking skills through seamless audio and video messaging with native speakers.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Connect & Learn</h3>
+        <p>Match with experienced teachers or language exchange partners for personalized learning experiences.</p>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="#" title="Download on the App Store">
+        <img src="Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="app-store-badge">
+      </a>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:contact@kaocha.app">Contact Us</a>
+      </div>
+      <p>© 2024 KaoCha. All rights reserved.</p>
+    </footer>
   </div>
 </body>
 
